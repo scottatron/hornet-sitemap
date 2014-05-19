@@ -1,0 +1,24 @@
+<div class="sitemap-node <%= sitemap.li_classes(node) %>">
+  
+  <%= sitemap.toggle_button(node) %>
+  
+  <span class="name name-and-info">
+    <%= node.name %> <%= sitemap.status(node) %>
+    <% if current_hornet_user.is_admin? %>
+      <span class="type admin-only"><%= node.class %></span>
+    <% end %>
+  </span>
+  
+  <%= sitemap.drag_handle(node) %>
+  
+  <div class="actions">
+    <%= sitemap.render_actions(node) %>
+  </div>
+  
+</div>
+
+<% unless sitemap.children_of(node).empty? %>
+<ul class="<%= sitemap.toggle_state(node) %>">
+  <%= render partial: 'hornet/nodes/default_node', as: 'node', collection: sitemap.children_of(node), locals: { sitemap: sitemap } %>
+</ul>
+<% end %>

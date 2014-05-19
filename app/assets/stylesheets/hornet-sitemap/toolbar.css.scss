@@ -1,0 +1,37 @@
+@import 'hornet/vars';
+
+.hornet-toolbar {
+  background-color: $darkgrey;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  
+  // Reset .sf-menu stuff
+  li, li:hover {
+    background: none;
+    float: none;
+  }
+  
+  .menu {
+    padding-top: 1em;
+  }
+  
+  ul, li {
+    background: none;
+  }
+  
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a, a:visited, a:active, a:focus, a:hover {
+    color: $hornet-toolbar-link-color;
+    cursor: pointer;
+  }
+  
+  a:active, a:focus, a:hover {
+    background: none;
+    color: $hornet-toolbar-link-color-hover;
+  }
+  
+}

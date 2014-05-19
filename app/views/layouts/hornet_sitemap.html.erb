@@ -1,0 +1,26 @@
+<%= render 'larvae_extras' if hornet_user_signed_in? %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>[<%= current_site.name %>] Hornet</title>
+  <%= stylesheet_link_tag "hornet", "hornet-sitemap" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+  <%= render 'layouts/ga' if Rails.env.production? %>
+</head>
+<body class="hornet-sitemap">
+  
+  <div class="ui-layout-west hornet-toolbar">
+    <%= render 'hornet/toolbar' %>
+  </div>
+  
+  <div class="ui-layout-center container">
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+  </div>
+  
+  <%= javascript_include_tag "application", "hornet-sitemap" %>
+  <%= yield :javascripts %>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<% present @tree, SitemapPresenter do |sitemap| %>
+<div class="section">
+  <ul class="sitemap">
+    <%= render partial: 'hornet/nodes/default_node', object: @tree.first, as: 'node', locals: { sitemap: sitemap } unless @tree.empty? %>
+  </ul>
+</div>
+<% end %>

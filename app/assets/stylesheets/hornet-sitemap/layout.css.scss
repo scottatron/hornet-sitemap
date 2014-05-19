@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.hornet-sitemap {
+  
+  .ui-layout-pane {
+    border: none;
+    padding: 0;
+  }
+  
+  .wrapper {
+    border: none;
+    width: auto;
+    height: 100%;
+  }
+  
+  .wrapper .section {
+    border: none;
+  }
+  
+}
+
+// Split pane without jquery.layout
+.hornet-sitemap {
+  position: relative;
+  
+  $toolbar-width: 220px;
+  
+  .ui-layout-west {
+    float: left;
+    height: 100%;
+    left: auto;
+    position: relative;
+    top: 0;
+    width: $toolbar-width;
+  }
+  
+  .ui-layout-center {
+    height: 100%;
+    margin-left: $toolbar-width;
+    overflow: auto;
+    padding: 0;
+  }
+}
